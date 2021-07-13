@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //Coordenada
+        var nome = '536.356.433'
+
+        //Pegar a posição do primeiro ponto
+         var x = nome.indexOf('.') + 1
+         document.write(x)
+       
+         
+        /* substr Quebra a linha em duas metades
+        * nome.substr(0, x) pega as letras da posição 0 até a posição do '.'
+        * nome.substr(x) pega as letras da posição x até a última letra
+        * .replace('.', 'a')) já substitui o ponto da segunda metade da string, ignorando o primeiro
+        * .concate junta as duas metades da string, formando uma só
+        */
+        var nome2 = nome.substr(0, x).concat(nome.substr(x).replace('.', 'a'))
+     
+        document.write(nome2)
+
+        
+        /*
+        //Pegar a posição do primeiro ponto
+        var x = nome.indexOf('.')
+
+        //Buscar a posição do segundo ponto começando a partir da próxima posição a partir de x
+        var y = nome.indexOf('.', x + 1)
+
+        //Laço de repetição
+        for(var contador = 0; contador < 2; contador++) {
+            //Estrutura de condição pra substituição
+        if(nome.includes(".", x + 1)){
+
+            //Substituir o caractere na posição y
+            nome = nome.replace(nome.charAt(y), "a")
+            }
+        }
+
+    
+         //Reseta o valor do primeiro .
+         nome = nome.replace("a", ".")
+
+        //Saída
+        document.write(nome + "<br />") */
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

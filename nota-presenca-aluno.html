@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var nome = prompt('Digite o nome do aluno')
+        var nota = prompt('Digite a nota do aluno')
+        var faltas = prompt('Digite a quantidade de faltas do aluno')
+
+        //Conversão de variáveis
+        nota = parseFloat(nota)
+        faltas = parseFloat(faltas)
+
+        
+
+        if(nota >=7 && faltas <= 30) {
+            alert("O aluno " + nome + " foi aprovado")
+            
+        }else if(nota >=7 && faltas > 30) {
+            alert("O aluno " + nome + " foi reprovado por faltas")
+        }else if (nota < 7 && faltas <= 30) {
+            alert("O aluno " + nome + " foi reprovado por nota")
+        }else {
+            alert("O aluno " + nome + " foi reprovado por nota e faltas")
+        }
+
+       
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

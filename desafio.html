@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var n1 = 0
+        var n2 = 0
+        var operacao = " "
+        var resultado = 0
+
+        n1 = prompt("Digite um número")
+        operacao = prompt("Deseja efetuar qual operação? (Informe em forma de texto)")
+        n2 = prompt("Digite um número")
+
+        var n1 = parseFloat(n1)
+        var n2 = parseFloat(n2)
+        
+
+        function calcular(n1, n2, operacao) {
+            if (operacao.toLocaleLowerCase() == "soma") {
+                resultado = n1 + n2
+                return resultado
+            } else if (operacao.toLocaleLowerCase() == 'subtração' || operacao.toLocaleLowerCase() == "subtracao") {
+                resultado = n1 - n2
+                return resultado
+            } else if (operacao.toLocaleLowerCase() == 'multiplicação' || operacao.toLocaleLowerCase() ==
+                "multiplicacao") {
+                resultado = n1 * n2
+                return resultado
+            } else if (operacao.toLocaleLowerCase() == 'divisão' || operacao.toLocaleLowerCase() == "divisao") {
+                resultado = n1 / n2
+                return resultado
+            } else {
+                resultado = ("ERRO! Digite um operador válido!")
+                return resultado
+            }
+        }
+
+        var resposta = calcular(n1, n2, operacao)
+
+        alert('O resultado é: ' + resposta)
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

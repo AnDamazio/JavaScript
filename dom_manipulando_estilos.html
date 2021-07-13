@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     
+       var click = 0
+
+        function modificaEstilo(corDeFundo) {
+            document.getElementById('quadrado').style.background = corDeFundo
+        }
+
+        function arredonda(radius) {
+            if(click == 0) {
+                document.getElementById('quadrado').style.borderRadius = radius
+                document.getElementById('bota').innerHTML = 'Arredondar'
+                click++
+            }else if(click ==1) {
+                radius = '0px'
+                document.getElementById('quadrado').style.borderRadius = radius
+                document.getElementById('bota').innerHTML = 'Enquadradar'
+                click--
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <h3>Manipulando estilo</h3>
+    <button type="button" onclick="modificaEstilo('#FF0000')">Vermelho</button>
+    <button type="button" onclick="modificaEstilo('#00FF00')">Verde</button>
+    <button type="button" onclick="modificaEstilo('#0000FF')">Azul</button>
+    <button type="button" onclick="arredonda('50px')" id="bota">Arredondar</button>
+    
+    <div 
+    id="quadrado"
+    style="border: 1px solid black; width: 100px; height: 100px; margin-top: 1rem;">
+
+    </div>
+</body>
+</html>

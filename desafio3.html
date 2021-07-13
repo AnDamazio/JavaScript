@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <input id="teste" type="text"/> 
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="ordenar()">Ordenar</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+        //Cria objeto Array
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+        //Estrutura para criação da lista e apresentação de conteúdo
+        let text = "<ul>"
+        objetos.forEach(mostrarNaTela)
+        text += "</ul>"
+        document.getElementById("demo").innerHTML = text;
+
+        //Estrutura que concatena o valor retornado no for each com o text
+        function mostrarNaTela(value) {
+            text += "<li>" + value + "</li>"
+        }
+
+        //Estrutura para adicionar um novo item na lista
+        function adicionar() {
+            var x = document.getElementById('teste').value
+            if(x == "") {
+                alert('Informe um valor válido!')
+            }else {
+                
+                if(objetos.includes(x)) {
+                    alert('Objeto já foi adicionado')
+                }else{
+
+                    objetos.push(x)
+                    console.log(objetos)
+                    document.getElementById.value = ""
+                }
+
+            }
+            
+        //Atualiza a lista toda vez que um objeto for adicionado
+        text = "<ul>"
+        objetos.forEach(mostrarNaTela)
+        text += "</ul>"
+        document.getElementById("demo").innerHTML = text;
+
+        }
+
+        //Organiza em ordem alfabética
+        function ordenar() {
+            console.log(objetos.sort())
+
+        text = "<ul>"
+        objetos.sort().forEach(mostrarNaTela)
+        text += "</ul>"
+        document.getElementById("demo").innerHTML = text;
+        }     
+
+      
+
+        
+
+    </script>
+</body>
+</html>

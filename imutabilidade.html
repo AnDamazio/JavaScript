@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const user = {
+            name: 'Guilherme',
+            lastName: 'Cabrini da Silva'
+        }
+
+        function getUserWithFullName(user) {
+            return {
+                ...user,
+                fullName: `${user.name} ${user.lastName}`
+            }
+        }
+
+        const userWithFullName = getUserWithFullName(user)
+        console.log(userWithFullName)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

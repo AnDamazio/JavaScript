@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        class Animal {
+            constructor() {
+                this.cor = ''
+                this.tamanho = null
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+
+
+        }
+
+        class Cachorro extends Animal{
+            constructor() {
+                super()
+                this.orelhas = 'Grandes e caídas'
+            }
+
+            correr() {
+                console.log('Correr')
+            }
+
+            rosnar() {
+                console.log('Rosnar')
+            }
+        }
+
+        class Passaro extends Animal{
+            constructor() {
+                super()
+                this.cor = 'Branco e marrom'
+                this.tamanho = 10
+                this.bico = 'Curto'
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        class Papagaio extends Passaro{
+            constructor() {
+                super()
+                this.bico = 'Médio'
+                this.sabeFalar = true
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+        }
+
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let papagaio = new Papagaio()
+
+        console.log(cachorro)
+        console.log(passaro)
+
+        papagaio.falar()
+        papagaio.voar()
+        cachorro.dormir()
+        passaro.dormir()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

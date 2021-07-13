@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //um software de marcenaria
+        //cadeira e sofá
+
+        //paradigma de OO
+
+        class Cadeira {
+            constructor(giratoria,pernas, cor) {
+                this.giratoria = giratoria
+                this.pernas = pernas
+                this.cor = cor
+            }
+
+            girarCadeira() {
+                if(this.giratoria === true) {
+                    console.log('girou')
+                }else {
+                    console.log('cadeira não é giratória')
+                }
+            }
+        }
+
+        let cadeira = new Cadeira(false, 4, 'azul')
+        let cadeira2 = new Cadeira(true, 1, 'vermelha')
+        cadeira.girarCadeira()
+        cadeira2.girarCadeira()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
