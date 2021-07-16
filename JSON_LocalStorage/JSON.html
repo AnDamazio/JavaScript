@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result"></div>
+<div id="result2"></div>
+<div id="result3"></div>
+
+<script>
+
+
+//String organizada como um objeto
+var a = '{"nome": "André", "idade": "18"}'
+var c = '{"nome": "Stephany", "idade": "20"}'
+var b
+
+//Criando um objeto com base na String
+var objeto = JSON.parse(a)
+
+//Injetando esse objeto em um elemento HTML
+document.getElementById('result2').innerHTML = objeto.nome + ',' + objeto.idade
+
+
+b = JSON.stringify(objeto)
+document.getElementById('result').innerHTML = b
+
+let pessoas = Array()
+
+pessoas += b
+pessoas += c
+
+document.getElementById('result3').innerHTML = pessoas
+
+</script>
+
+</body>
+</html>

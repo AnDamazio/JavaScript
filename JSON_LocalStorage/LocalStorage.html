@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/images/favicon.png" />
+    <!-- seo -->
+    <meta name="description" content="Resumo do meu site que vai aparecer no buscador da pessoa.">
+    <meta name="keywords" content="landing page, etec, barueri, etec de barueri">
+    <!-- fim seo -->
+    <title>Tipo uma Landing Page </title>
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- fim css -->
+</head>
+
+<body>
+
+    <input id="nome" class="" placeholder="nome"> 
+    <input id="idade" class="" placeholder="idade"><button class="btn btn-dark" onclick="cadastrarPessoa()">Cadastrar</button>
+    <div id="tela" class="mt-4" style="width: 230px; height: 230px; border: 1px solid black;">
+    
+    </div>
+
+<script>
+
+    /**/
+    class Pessoa {
+        constructor(nome, idade) {
+            this.nome = nome
+            this.idade = idade
+        }
+    }
+
+    //Classe para gerenciar o LocalStorage
+    class Bd {
+        constructor() {
+            //Variável inerente ao objeto
+            //Salva na memória o valor atual do id
+            let id = localStorage.getItem('id')
+            
+            //Cria a key e define um valor pra ela caso não exista
+            if(id === null) {
+                localStorage.setItem('id', 0)
+            }
+            
+        }
+
+        getProximoId() {
+            //Pega o id atual e salva 
+            let proximoId = localStorage.getItem('id')
+
+            //Retorna o valor do id atual + 1, para que não haja sobreposição
+            return parseInt(proximoId) + 1
+        }
+
+        gravar(d) {
+            //Pega a próxima posição para salvar o objeto
+            let id = this.getProximoId()
+            //Passa o objeto para String e salva na posição 
+            localStorage.setItem(id, JSON.stringify(d))
+            //Atualiza o valor atual do id no banco
+            localStorage.setItem('id', id)
+        }
+    }
+
+    bd = new Bd()
+
+    function cadastrarPessoa() {
+
+        //Salva os valores dos atributos em uma varável
+        //Pega os valores dos inputs
+        let nome = document.getElementById('nome')
+        let idade = document.getElementById('idade')
+
+
+        //Objeto constantemente sobreposto
+        //Recebe os dados dos inputs
+        pessoa = new Pessoa(
+        nome.value,
+        idade.value
+        )
+
+        //Condicional para impedir que um objeto nulo seja salvo
+       if(pessoa.nome == "" || pessoa.idade == "") {
+            alert('Erro no preenchimento dos campos')
+       }else {
+        bd.gravar(pessoa)
+        
+        document.getElementById('tela').innerHTML += '<p>'+ pessoa.nome + " " + pessoa.idade+ '</p>'
+       }
+
+    }
+
+
+</script>
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+<!-- fim scripts -->
+</body>
+</html>
