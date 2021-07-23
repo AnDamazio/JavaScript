@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    let text = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    
+    //DOCUMENTAÇÃO: https://www.w3schools.com/jsref/jsref_obj_string.asp
+
+    /**
+     * 
+     * 
+     *  MANIPULAÇÃO DE STRING 
+     * 
+     * 
+     * 
+    **/
+
+    //comprimento
+    console.log(text.length)
+
+    //Retorna parte de uma string
+    console.log(text.slice(6, 17))
+
+    //Retorna parte de uma string (não suporta valores negativos)
+    console.log(text.substr(6, 17))
+
+    //Substitui parte de uma String
+
+    let newText = text.replace('A', 'Abacate')
+    console.log(newText)
+
+      /**
+     * 
+     * 
+     *  PESQUISA EM STRING
+     * 
+     * 
+     * 
+    **/
+
+    let text2 = "Cavaleiros dos Zodiacos"
+    
+    //Retorna a posição da primeira letra da palavra
+    console.log(text2.indexOf("Zodiacos")) 
+
+    //Retorna a posição da última letra da palavra <- não funciona mais
+    console.log(text2.lastIndexOf("Zodiacos")) 
+
+    //Retorna a posição da palavra
+    console.log(text2.search("Cavaleiros"))    
+    
+    // <- /i = case sensitive, /g busca todas as correspondências- 
+    //-parando no primeiro que encontrar, /m busca todas as correspondências
+    let textArray = text2.match(/o/g) 
+    console.log(textArray) 
+    
+    //Verifica se uma string contém um valor
+    console.log(text2.includes('a')) // <- possível passar segundo parâmetro de por onde iniciar a busca
+
+    //Verifica se uma string termina  um valor
+    console.log(text2.endsWith('s')) // <- possível passar segundo parâmetro de por onde iniciar a busca
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

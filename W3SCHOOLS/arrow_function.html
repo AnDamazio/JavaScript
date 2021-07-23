@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Função normal
+        let hello = function() {
+            return "Hello World!";
+        }
+
+        console.log(hello())
+
+        //Com arrow function
+        let hello2 = () => {return "Hello World!"}
+        console.log(hello2())
+
+        //Arrow function retorno default 
+        let hello3 = () => "Hello World!"
+        console.log(hello3())
+
+        //Arrow function com parâmetros
+        let hello4 = (nome) => `Hello, ${nome}`
+        console.log(hello4('André'))
+
+        //Arrow function com parâmetros sem parenteses
+        let hello5 = nome => `Hello, ${nome}`
+        console.log(hello5('André'))
+
+        let obj = {
+            nome:'André',
+            idade:15
+        }
+        
+        //Arrow function com parâmetros sem parenteses imprimindo um objeto
+        let hello6 = objeto => `Hello, ${objeto.nome} `
+        console.log(hello6(obj))
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
